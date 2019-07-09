@@ -1,0 +1,81 @@
+body.noScroll
+{
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.background
+{
+  width: auto;
+  opacity: 1.0;
+  position: absolute;
+  left: -10px;
+  z-index: -1;
+}
+ 
+.logo
+{
+  opacity: 1.0;
+  position: inherit;
+  z-index: 1;
+}
+
+.text
+{
+  font-size: 20px; 
+  font-family: "";
+  color: #0032A0;
+  opacity: 1.0;
+  position: absolute;
+  left: 50px;  
+  z-index: 1;
+  background-color: white;
+  border-style: hidden;
+  border-width: 2px;
+  border-radius: 10px;
+  height: 240px;
+  width: 800px;
+}
+
+
+/* invalid inputs have a black border, and valid inputs have a green border */
+.inputForm input:invalid
+{
+  border: 2px solid #000000;
+}
+
+.inputForm input:valid
+{
+  border: 2px solid #4CAF50;  
+}
+
+
+.button
+{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+/* disabled button shouldn't be visible */
+button:disabled,
+button[disabled]
+{
+  background-color: #FFFFFF;
+  border: none;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+}

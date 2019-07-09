@@ -1,0 +1,53 @@
+<!-- uniform formatting across browsers -->
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+
+<body scroll="no">
+<link href="app.component.css">
+
+<div class="background">
+  <img src="../assets/img/background.png">
+</div>
+
+<!-- United logo -->
+<div class="logo" align="right">
+<header>
+  <img width="300" alt="United Logo" src="../assets/img/united-airlines-logo.png">
+</header>
+</div>
+
+<!-- reactive form -->
+<div class="text" align="center">
+  <h2 style="font-size:150%"><u>Flight Search</u></h2><br>
+
+  <!-- input pattern attribute used for basic input validation -->
+  <form id="form" (formGroup)="ngForm" (ngSubmit)="submitForm()" class="inputForm">
+    <label> From </label> <input id="origin" type="text" placeholder="E.g. ORD" pattern="[A-Z][A-Z][A-Z]">
+    
+    <label> To </label> <input id="destination" type="text" placeholder="E.g. IAH" pattern="[A-Z][A-Z][A-Z]"><br>
+   
+    <!-- need Angular custom model form validation in order to implement the required input pattern, (flightno || (origin && destination)) && date -->
+    <p style="color:grey" style="font-size:50%"> OR <br> </p>
+    
+    <label> Flight No. </label> <input id="flightno" type="text" placeholder="E.g. 2043" pattern="[0-9][0-9][0-9][0-9]"><br><br><br>
+    
+    <label> Date </label> <input id="date" type="text" placeholder="YYYY-MM-DD" pattern="[0-2][0-9][0-9][0-9]-[0-1][0-9]-[0-3][0-9]" required>
+    
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <button id="search" type="submit" class="button"> Search </button>
+  </form>
+</div>
+
+<script>
+  console.log("HELLO");
+  const dateInput = document.getElementById('date');
+  isValid = dateInput.checkValidity();
+
+  if(isValid) {
+	search.disabled = false;
+  }
+  else{
+	search.disabled = true;
+	console.log("invalid!!!!!!!!");
+  }
+</script>
+
+</body>
